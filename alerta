@@ -1,0 +1,4 @@
+function alerta(x){
+		alert(x);
+}
+
