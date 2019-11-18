@@ -8,7 +8,7 @@ namespace ProjetoWeb.Models {
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public List<Seller> Seller { get; set; } = new List<Seller>();
+        public ICollection<Seller> Seller { get; set; } = new List<Seller>();
 
         public Department(int id, string name) {
             Id = id;
@@ -23,9 +23,10 @@ namespace ProjetoWeb.Models {
             Seller.Add(seller);
         }
 
-        //public double TotalSales(DateTime initial, DateTime final) {
+        public double TotalSales(DateTime initial, DateTime final)
+        {
+            return Seller.Sum(sl=>sl.Totalsales(initial, final));
 
-
-        //}
+        }
     }
 }

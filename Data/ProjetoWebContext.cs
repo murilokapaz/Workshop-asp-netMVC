@@ -14,5 +14,7 @@ namespace ProjetoWeb.Models
         }
 
         public DbSet<ProjetoWeb.Models.Department> Department { get; set; }
+        public DbSet<Seller> Seller { get; set; }
+        public DbSet<SalesRecord> SalesRecords { get; set; }
     }
 }
